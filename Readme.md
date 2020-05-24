@@ -1,4 +1,4 @@
-**电商Sample应用**
+**电商Sample应用(美餐网)**
 
 启动方法
 1. 创建DB, 初始化数据。 导入sql语句 sql/e_menu.sql;
