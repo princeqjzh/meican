@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <title>常规弹出日历示例页</title>
+		<script type="text/javascript" src="lhgcore.js"></script>
+		<script type="text/javascript" src="lhgcalendar.js"></script>
+		<style type="text/css">
+	body{margin:0;padding:0;font:14px Verdana, Arial, sans-serif;line-height:200%;}
+	#content{padding-left:50px;padding-right:50px;}
+	#content h2{font-size:18px;color:#1E9300;padding-top:8px;margin-bottom:8px;}
+	#content h3{margin-top:8px;margin-bottom:8px;FONT:bold 14px 宋体,tahoma,arial,sans-serif;COLOR:#0033CC;}
+	#content div{margin-top:10px;margin-bottom:10px;border:#666 solid 1px;padding:10px;}
+	#content span{color:#f00;font-weight:bold;}
+	ul, ol{color:#000000;}
+	</style>
+</head>
+
+<body>
+    <div id="content">
+		<h2>常规弹出日历示例页</h2><hr size="1" style="width:400px;" align="left">
+		<h3>1. 在控件下面或右面弹出日历组件（默认是在下面弹出） </h3>
+	    <div>
+	        <input type="text" id="c1" onclick="J.calendar.get();"/>&nbsp;显示在下面&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" id="c2" onclick="J.calendar.get({dir:'right'});"/>&nbsp;显示在右面
+		</div>
+		<h3>2. 通过按钮或图片等其它控件弹出日历组件</h3>
+		<div>
+	        <input type="text" id="c3"/>
+			<input type="button" id="btn" onclick="J.calendar.get({id:'c3'});" value="弹出"/>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" id="c4"/>
+			<img align="absmiddle" src="images/date.gif" onclick="J.calendar.get({id:'c4'});"/>
+		</div>
+		<h3>3. 显示日期的2种格式（默认为 年-月-日 格式）</h3>
+		<div>
+	        <input type="text" id="c5" onclick="J.calendar.get();"/>&nbsp;年-月-日 格式&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" id="c6" onclick="J.calendar.get({type:'/'});"/>&nbsp;月/日/年 格式
+		</div>
+		<h3>4. 在文本框显示带时间的日期</h3>
+		<div>
+		    <input type="text" id="c7" onclick="J.calendar.get({time:true});"/>
+		</div>
+		<h3>5. 日期范围限制</h3>
+		<div>
+		    <input type="text" id="c8" onclick="J.calendar.get({to:'2009-8-8,min'});"/>&nbsp;只能选择2009-8-8以前的日期&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" id="c9" onclick="J.calendar.get({to:'2009-8-18,max'});"/>&nbsp;只能选择2009-8-18以后的日期<br/>
+			<input type="text" id="c10" onclick="J.calendar.get({to:'c11,min'});"/>
+			<input type="text" id="c11" onclick="J.calendar.get({to:'c10,max'});"/>&nbsp;这2个文本框，前面的日期不能大于后面的日期，后面的不能小于前面的日期。
+		</div>
+	</div>
+</body>
+</html>

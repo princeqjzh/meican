@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.hibernate.appraise_res.AppraiseRes" table="appraise_res" catalog="e_menu">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="appResNum" type="java.lang.String">
+            <column name="app_res_num" length="50">
+                <comment>饭店编号</comment>
+            </column>
+        </property>
+        <property name="appUserName" type="java.lang.String">
+            <column name="app_user_name" length="50">
+                <comment>顾客名字</comment>
+            </column>
+        </property>
+        <property name="appResContent" type="java.lang.String">
+            <column name="app_res_content">
+                <comment>评论内容</comment>
+            </column>
+        </property>
+        <property name="appPriseStar" type="java.lang.Integer">
+            <column name="app_prise_star">
+                <comment>评价饭店价格星星</comment>
+            </column>
+        </property>
+        <property name="appDeliStar" type="java.lang.Integer">
+            <column name="app_deli_star">
+                <comment>评价饭店好不好吃星星</comment>
+            </column>
+        </property>
+        <property name="appServerStar" type="java.lang.Integer">
+            <column name="app_server_star">
+                <comment>评价饭店服务态度星星</comment>
+            </column>
+        </property>
+        <property name="appStar" type="java.lang.Integer">
+            <column name="app_star">
+                <comment>总评星星</comment>
+            </column>
+        </property>
+        <property name="addperson" type="java.lang.String">
+            <column name="addperson">
+                <comment>添加人</comment>
+            </column>
+        </property>
+        <property name="addtime" type="java.lang.String">
+            <column name="addtime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson">
+                <comment>更新人</comment>
+            </column>
+        </property>
+        <property name="updatetime" type="java.lang.String">
+            <column name="updatetime">
+                <comment>更新时间</comment>
+            </column>
+        </property>
+        <property name="deletesign" type="java.lang.Integer">
+            <column name="deletesign">
+                <comment>删除标识</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

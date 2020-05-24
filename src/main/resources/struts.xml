@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="i18n.resources.encoding" value="gb2312" />
+	
+	<package name="testlogin" extends="struts-default">
+		<action name="restaurant" class="com.struts2.restaurant.RestaurantAction">
+			<result name="success">/restaurant/indexres.jsp</result>
+		</action>
+		
+		<action name="searchres" class="com.struts2.restaurant.RestaurantSearchAction">
+			<result name="success">/restaurant/indexres.jsp</result>
+		</action>
+		
+		<action name="login" class="com.struts2.login.LoginAction">
+			<result name="success" type="redirect">restaurant.action</result>
+			<result name="waiter" type="redirect">waiter_view.action</result>
+			<result name="manager" type="redirect">manager.action?page=1</result>
+			<result name="error">/userlogin/error.jsp</result>
+		</action>
+		
+		<action name="forgetpwd" class="com.struts2.login.ForgotPasswordAction">
+			<result name="success">/userlogin/1.jsp</result>
+			<result name="register">/userlogin/register.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="userInformation" extends="struts-default">
+		<action name="userinfo" class="com.struts2.user.UserInfoAction">
+			<result name="success">/customer/userinfo.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="userchange" class="com.struts2.user.ChangeUserAction">
+			<result name="success">/customer/userinfo.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		
+	</package>
+	
+	<package name="res_menu" extends="struts-default">
+		<action name="menu" class="com.struts2.menu.MenuAction">
+			<result name="success">/menu/menu.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="list_menu" extends="struts-default">
+		<action name="list" class="com.struts2.list.ListAction">
+			<result name="success">/list/listindex.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="order_menu" extends="struts-default">
+		<action name="orderread" class="com.struts2.order.OrderReadAction">
+			<result name="success">/order/oderindex.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		<action name="order" class="com.struts2.order.OrderAction">
+			<result name="success" type="redirect">orderread.action</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="appraise_list" extends="struts-default">
+		<action name="appraise" class="com.struts2.appraise.AppraiseAction">
+			<result name="success">/appraise/appraise_res.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="appraiselist" class="com.struts2.appraise.AppraiseListAction">
+			<result name="success">/appraise/appraise_list.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="appraise_res" extends="struts-default">
+		<action name="appraise_res" class="com.struts2.appraise.AppraiseResAction">
+			<result name="success" type="redirect">restaurant.action</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="user_order" extends="struts-default">
+	<action name="userorder" class="com.struts2.order.MyOrderAction">
+			<result name="success">/order/oderindex.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="testCheck" extends="struts-default">  
+        <action name="UserAction_*" class="com.struts2.login.CheckAction" method="{1}">  
+            <result name="reg">  
+                <param name="location">/userlogin/register.jsp</param>  
+                <param name="charset">utf-8</param>  
+            </result>  
+        </action>  
+    </package>  
+    
+    
+    <package name="waiterView" extends="struts-default">
+	<action name="waiter_view" class="com.struts2.waiter.WaiterAction">
+			<result name="success">/waiter/waiter_view.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="ManagerView" extends="struts-default">
+		<action name="manager" class="com.struts2.manager.ManagerAction">
+			<result name="success">/manager/manager.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="changemanager" class="com.struts2.manager.ChangeAction">
+			<result name="success">/manager/manager_change.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="changemenu" class="com.struts2.manager.ChangeManagerAction">
+			<result name="success">/manager/manager.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="deletemanager" class="com.struts2.manager.DeleteMenuAction">
+			<result name="success">/manager/manager.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="addmanager" class="com.struts2.manager.AddMenuAction">
+			<result name="success">/manager/manager_list_view.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	<package name="RegAct" extends="struts-default">
+	<action name="register" class="com.struts2.login.RegisterAction">
+			<result name="success">/waiter/waiter_view.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+</struts>    

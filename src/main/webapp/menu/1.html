@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<button onclick="addProduct('qwe',1,23)">123456789</button>
+<table style="width:300px;height:auto;">
+			<thead>
+				<tr>
+					<th field="name" width=100 align="left">菜名</th>
+					<th field="quantity" width=60 align="left">折扣</th>
+					<th field="price" width=60 align="left">菜价</th>
+                    <th field="dele" width=60 align="left"></th>
+				</tr>
+			</thead>
+		</table>
+		<table id="cartcontent" style="width:300px;height:auto;">
+			<thead>
+				<tr>
+					<th field="name" width=100 align="left"></th>
+					<th field="quantity" width=60 align="left"></th>
+					<th field="price" width=60 align="left"></th>
+                    <th field="dele" width=60 align="left"></th>
+				</tr>
+			</thead>
+		</table>
+</body>
+<script>
+	var index = 0;
+	function addProduct(name,num,price){
+		var t = document.getElementById("cartcontent");
+		
+		var tRow = t.insertRow(index);
+		var tCell0 = tRow.insertCell(0);
+		var tCell1 = tRow.insertCell(1);
+		var tCell2 = tRow.insertCell(2);
+		var tCell3 = tRow.insertCell(3);
+		var qwe = document.createElement("p");
+		qwe.innerHTML = '<button onClick="delete1(index)">123</button>';
+		tCell0.appendChild(document.createTextNode(name));
+		tCell1.appendChild(document.createTextNode("1"));
+		tCell2.appendChild(document.createTextNode(price));
+		tCell3.appendChild(qwe);
+	
+		index = index+1;
+	}
+	function delete1(i){
+		var t = document.getElementById("cartcontent");
+		t.deleteRow(i-1);
+	}
+</script>
+</html>

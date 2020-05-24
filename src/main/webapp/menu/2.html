@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>表格相关</title>
+<script language="javascriptt">
+function add_row(){
+if ((document.getElementByIdx("name").value=="")||(document.getElementByIdx("pass").value==""))
+{alert("值不能为空"); return 0;}
+
+var tableobj=document.getElementByIdx("table_1");
+var rowobj=tableobj.insertRow(tableobj.rows.length);
+
+var cell1=rowobj.insertCell(rowobj.cells.length);
+var cell2=rowobj.insertCell(rowobj.cells.length);
+var cell3=rowobj.insertCell(rowobj.cells.length);
+
+cell1.innerHTML=document.getElementByIdx("name").value;
+cell2.innerHTML=document.getElementByIdx("pass").value;
+cell3.innerHTML="<input type='button' value='删除' onclickt='delete_row("+(tableobj.rows.length-1)+");leo()'>";
+
+document.getElementByIdx("name").value="";
+document.getElementByIdx("pass").value="";
+}
+
+function leo(){//当删除一行后，对各行重新建立索引
+var tableobj=document.getElementByIdx("table_1");
+for(i=1;i<tableobj.rows.length;i++)
+{
+tableobj.rows[i].cells[2].innerHTML="<input type='button' value='删除' onclickt='delete_row("+i+");leo()'>";
+}
+}
+
+function delete_row(i){
+var tableobj=document.getElementByIdx("table_1");
+alert("删除第"+i+"行");
+tableobj.deleteRow(i);
+
+}
+
+</script>
+
+</head>
+
+<body>
+<div align="center">
+<input name="name" type="text">
+<input name="pass" type="text">
+<input name="add" type="button" onclickt="add_row()" value="添加">
+</div>
+<div align="center">
+<table id="table_1" border="1">
+<tr>
+<td>帐号</td><td>密码</td><td>操作</td>
+</tr>
+<button onClick=""></button>
+</table>
+</div>
+</body>
+</html>

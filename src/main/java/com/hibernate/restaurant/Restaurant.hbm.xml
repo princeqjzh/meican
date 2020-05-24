@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.restaurant.Restaurant" table="restaurant" catalog="e_menu">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="resNum" type="java.lang.Integer">
+            <column name="res_num">
+                <comment>饭店编号</comment>
+            </column>
+        </property>
+        <property name="resName" type="java.lang.String">
+            <column name="res_name" length="50">
+                <comment>饭店名称</comment>
+            </column>
+        </property>
+        <property name="resRank" type="java.lang.String">
+            <column name="res_rank">
+                <comment>饭店等级</comment>
+            </column>
+        </property>
+        <property name="resTel" type="java.lang.String">
+            <column name="res_tel" length="15">
+                <comment>饭店电话</comment>
+            </column>
+        </property>
+        <property name="resAdd" type="java.lang.String">
+            <column name="res_add" length="100">
+                <comment>饭店地址</comment>
+            </column>
+        </property>
+        <property name="resPro" type="java.lang.String">
+            <column name="res_pro" length="30">
+                <comment>省</comment>
+            </column>
+        </property>
+        <property name="resCity" type="java.lang.String">
+            <column name="res_city" length="30">
+                <comment>市</comment>
+            </column>
+        </property>
+        <property name="addperson" type="java.lang.String">
+            <column name="addperson">
+                <comment>添加人</comment>
+            </column>
+        </property>
+        <property name="addtime" type="java.lang.String">
+            <column name="addtime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson">
+                <comment>更新人</comment>
+            </column>
+        </property>
+        <property name="updatetime" type="java.lang.String">
+            <column name="updatetime">
+                <comment>更新时间</comment>
+            </column>
+        </property>
+        <property name="deletesign" type="java.lang.Integer">
+            <column name="deletesign">
+                <comment>删除标识</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

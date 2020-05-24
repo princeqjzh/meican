@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.order.Order" table="order" catalog="e_menu">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="ordNum" type="java.lang.Integer">
+            <column name="ord_num">
+                <comment>订单号</comment>
+            </column>
+        </property>
+        <property name="ordUserName" type="java.lang.String">
+            <column name="ord_user_name" length="20">
+                <comment>预订订单的用户名</comment>
+            </column>
+        </property>
+        <property name="ordPrise" type="java.lang.Float">
+            <column name="ord_prise" precision="10" scale="3">
+                <comment>订单总价</comment>
+            </column>
+        </property>
+        <property name="ordResNum" type="java.lang.Integer">
+            <column name="ord_res_num">
+                <comment>饭店编号</comment>
+            </column>
+        </property>
+        <property name="ordDate" type="java.lang.String">
+            <column name="ord_date" length="50">
+                <comment>预订时间</comment>
+            </column>
+        </property>
+        <property name="ordNumber" type="java.lang.Integer">
+            <column name="ord_number">
+                <comment>预订要吃饭的人数</comment>
+            </column>
+        </property>
+        <property name="ordStatus" type="java.lang.String">
+            <column name="ord_status">
+                <comment>订单状态</comment>
+            </column>
+        </property>
+        <property name="ordWaiterName" type="java.lang.String">
+            <column name="ord_waiter_name">
+                <comment>服务员名字</comment>
+            </column>
+        </property>
+        <property name="addperson" type="java.lang.String">
+            <column name="addperson">
+                <comment>添加人</comment>
+            </column>
+        </property>
+        <property name="addtime" type="java.lang.String">
+            <column name="addtime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="updateperson" type="java.lang.String">
+            <column name="updateperson">
+                <comment>更新人</comment>
+            </column>
+        </property>
+        <property name="updatetime" type="java.lang.String">
+            <column name="updatetime">
+                <comment>更新时间</comment>
+            </column>
+        </property>
+        <property name="deletesign" type="java.lang.Integer">
+            <column name="deletesign">
+                <comment>删除标识</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
