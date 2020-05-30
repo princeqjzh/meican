@@ -1,26 +1,19 @@
 package com.struts2.order.dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
-
-import com.hibernate.menu.AbstractMenu;
-import com.hibernate.menu.Menu;
 import com.hibernate.order.AbstractOrder;
 import com.hibernate.order.Order;
 import com.hibernate.user.HibernateSessionFactory;
-import com.hibernate.user.User;
 import com.struts2.list.dao.ListSelectDao;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class OrderDao {
 
@@ -86,25 +79,6 @@ public class OrderDao {
 		session.close();
 		return list1;
 	}
-	
-//	public String reswaiter(int res_num){
-//		String name = null;
-//		Session session = HibernateSessionFactory.getSession();
-//		Criteria cri = session.createCriteria(User.class);
-//		List list = cri.list();
-//		ListIterator iterator = list.listIterator();
-//		List<String> list2 = new ArrayList<String>();
-//		while(iterator.hasNext())
-//		{
-//			User user = (User)iterator.next();
-//			System.out.println("name:"+user.getUserRes());
-//			System.out.println("password:"+user.getUserSign());
-//			if((user.getUserRes() == res_num)&&(user.getUserSign() == 2)){
-//				name = user.getUserName();
-//			}
-//		}
-//		return name;
-//	} 
 	
 	public static void main(String[] args) throws HibernateException {
 //		System.out.println(listOrder("admin"));

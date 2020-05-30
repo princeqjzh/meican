@@ -1,17 +1,12 @@
 package com.struts2.manager;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.manager.dao.ManagerDao;
-import com.struts2.menu.dao.MenuDao;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public class ChangeAction extends ActionSupport {
 

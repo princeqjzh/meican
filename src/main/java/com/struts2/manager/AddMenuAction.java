@@ -3,18 +3,16 @@
  */
 package com.struts2.manager;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.manager.dao.ManagerDao;
 import com.struts2.menu.dao.MenuDao;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class AddMenuAction extends ActionSupport {
 
@@ -78,7 +76,7 @@ public class AddMenuAction extends ActionSupport {
 
 		MenuDao menuDao = new MenuDao();
 		List<Map<String, Object>> rs = new ArrayList<Map<String, Object>>();
-		rs = menuDao.listMenu(res_num);// 10001Ϊres_num
+		rs = menuDao.listMenu(res_num);
 		if (rs != null) {
 			HttpServletRequest request = ServletActionContext.getRequest();
 			request.setAttribute("list_menu", rs);

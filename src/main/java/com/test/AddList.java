@@ -29,22 +29,19 @@ public class AddList {
 		// TODO Auto-generated method stub
 		List1 li= new List1();
 		//
-		li.setListOrdNum(ordernum);// ¶©µ¥ºÅ
-		li.setListPrise(String.valueOf(total));// ¼Û¸ñ
-		li.setListResNum(String.valueOf(res_name));// ·¹µê±àºÅ
-		li.setListUserName(username);// ÓÃ»§Ãû
-		li.setListMeNum(listMeNum);// ²Ë±àºÅ
+		li.setListOrdNum(ordernum);
+		li.setListPrise(String.valueOf(total));
+		li.setListResNum(String.valueOf(res_name));
+		li.setListUserName(username);
+		li.setListMeNum(listMeNum);
 
 		Configuration config = new Configuration().configure();
 		SessionFactory sessionFactory = config.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
-			// ¿ªÊ¼Ò»¸öÊÂÎñ
 			tx = session.beginTransaction();
-			// ³Ö¾Ã»¯²Ù×÷
 			session.save(li);
-			// Ìá½»ÊÂÎñ
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,11 +63,8 @@ public class AddList {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
-			// ¿ªÊ¼Ò»¸öÊÂÎñ
 			tx = session.beginTransaction();
-			// ³Ö¾Ã»¯²Ù×÷
 			session.save(user);
-			// Ìá½»ÊÂÎñ
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null) {

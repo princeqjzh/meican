@@ -1,16 +1,13 @@
 package com.struts2.menu;
 
+import com.opensymphony.xwork2.ActionSupport;
+import com.struts2.menu.dao.MenuDao;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import com.struts2.menu.dao.MenuDao;
 
 public class MenuAction extends ActionSupport {
 	private int res_num;

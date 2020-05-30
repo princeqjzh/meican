@@ -3,15 +3,13 @@
  */
 package com.struts2.login;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.login.dao.LoginDao;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class CheckAction extends ActionSupport{
 	
@@ -38,9 +36,9 @@ public class CheckAction extends ActionSupport{
         boolean flag=logindao.checkName(getUsername());  
           
         if(flag){  
-            out.print("�û����Ѵ���");  
+            out.print("flag = " + flag);
         }else{  
-            out.print("�û�������ʹ��");  
+            out.print("flag = " + flag);
         }  
         out.flush();  
         out.close();  

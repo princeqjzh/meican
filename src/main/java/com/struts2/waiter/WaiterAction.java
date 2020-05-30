@@ -1,12 +1,12 @@
 package com.struts2.waiter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.waiter.dao.WaiterView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class WaiterAction extends ActionSupport{
 	

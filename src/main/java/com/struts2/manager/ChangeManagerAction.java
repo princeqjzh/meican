@@ -1,16 +1,14 @@
 package com.struts2.manager;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.ParseException; 
-
-import org.apache.commons.io.FileUtils;
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.manager.dao.ManagerDao;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ChangeManagerAction extends ActionSupport{
 	
@@ -102,7 +100,6 @@ public class ChangeManagerAction extends ActionSupport{
 	private String menu_price;
 	private String menu_classes;
 	private String menu_discount;
-//	private String food_img;
 	private File pic;     
 	private String picFileName;  
 	private String picContentType;  
@@ -115,21 +112,17 @@ public class ChangeManagerAction extends ActionSupport{
 		String resnum = (String) ctx.getSession().get("res_num");
 		int res_num = Integer.valueOf(resnum);
 		
-        try {  
-            //服务器的路径  
-            String realpath = ServletActionContext.getServletContext().getRealPath("E:\\tools\\Web_Work\\E_Menu\\menu\\img");          
-            //例如-------D:\apache-tomcat-6.0.18\webapps\struts2_upload\images       
-            System.out.println("上传到服务器的地址realpath: "+realpath);   
-            //具体地址+文件名  
+        try {
+            String realpath = ServletActionContext.getServletContext().getRealPath("E:\\tools\\Web_Work\\E_Menu\\menu\\img");
+            System.out.println("realpath: "+realpath);
             String lj = realpath+"\\"+picFileName;  
-            System.out.println("具体的地址lujing"+lj);  
-            //列如------  D:\apache-tomcat-7.0.47\webapps\dyda\shuju\15636139999[通话详单]查询_1_1.xls    
+            System.out.println("lujing"+lj);
             if (pic != null) {              
                 File savefile = new File(new File(realpath), picFileName);              
                 if (!savefile.getParentFile().exists())   
                     savefile.getParentFile().mkdirs();    
                 FileUtils.copyFile(pic, savefile);              
-                ActionContext.getContext().put("message", "文件上传成功");          
+                ActionContext.getContext().put("message", "ready");
             }  
         } catch (IOException e) {  
             // TODO Auto-generated catch block  

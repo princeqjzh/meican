@@ -82,9 +82,9 @@ public class RegisterAction extends ActionSupport {
 		LoginDao logindao = new LoginDao();
 		System.out.println(this.getSex());
 		if(getSex().equals("a")){
-			s_sex = "��";
+			s_sex = "男";
 		}if(getSex().equals("b"))
-			s_sex = "Ů";
+			s_sex = "女";
 		System.out.println(s_sex);
 		System.out.println(getResnum());
 		

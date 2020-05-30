@@ -1,19 +1,14 @@
 package com.struts2.user.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
-
 import com.hibernate.user.AbstractUser;
 import com.hibernate.user.HibernateSessionFactory;
 import com.hibernate.user.User;
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserInfoDao {
 	public List<AbstractUser> listSearch(String username)
@@ -33,15 +28,11 @@ public class UserInfoDao {
 			String tel, String sex, String real) {
 		User user = new User();
 
-		Configuration config = new Configuration().configure();// 初始化，读取配置文件
-																// hibernate,cfg,xml
-		SessionFactory sessionFactory = config.buildSessionFactory();// 读取并解析映射文件
-																		// user.hbm.xml,创建sessionfactory
-		Session session = sessionFactory.openSession();// 打开session
+		Configuration config = new Configuration().configure();
+		SessionFactory sessionFactory = config.buildSessionFactory();
+		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		user = (User) session.get(User.class, id);
-		// user.setUserName("hello");
-		// user.setUserPwd("helloword!");
 		user.setUserName(username);
 		user.setUserPwd(pwd);
 		user.setUserEmail(mail);

@@ -3,25 +3,18 @@
  */
 package com.struts2.manager.dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
-
-import com.hibernate.appraise_res.AppraiseRes;
 import com.hibernate.menu.AbstractMenu;
 import com.hibernate.menu.Menu;
 import com.hibernate.user.HibernateSessionFactory;
 import com.hibernate.user.User;
-import com.opensymphony.xwork2.ActionContext;
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ManagerDao {
 	
@@ -101,11 +94,8 @@ public class ManagerDao {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
-			// ��ʼһ������
 			tx = session.beginTransaction();
-			// �־û�����
 			session.save(menu);
-			// �ύ����
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -140,7 +130,6 @@ public class ManagerDao {
 			session.close();
 
 		}
-		// return sign;
 	}
 
 	public List searchid(int id) {
@@ -184,9 +173,6 @@ public class ManagerDao {
 
 		for (int i = 0; i < list_copy.size(); i++) {
 			Menu menu = (Menu) list.get(i);
-			// String strUserName = user.getUserName();
-			// String strUserPwd = user.getUserPwd();
-
 			int i_res_num = menu.getMenuResNum();
 			System.out.println(i_res_num);
 			int i_food_num = menu.getFoodNum();
@@ -204,15 +190,12 @@ public class ManagerDao {
 			int classes, int menu_discount, String img) {
 		Menu menu = new Menu();
 
-		Configuration config = new Configuration().configure();// ��ʼ������ȡ�����ļ�
-																// hibernate,cfg,xml
-		SessionFactory sessionFactory = config.buildSessionFactory();// ��ȡ������ӳ���ļ�
-																		// user.hbm.xml,����sessionfactory
-		Session session = sessionFactory.openSession();// ��session
+		Configuration config = new Configuration().configure();
+
+		SessionFactory sessionFactory = config.buildSessionFactory();
+		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		menu = (Menu) session.get(Menu.class, id);
-		// user.setUserName("hello");
-		// user.setUserPwd("helloword!");
 		menu.setId(id);
 		menu.setFoodNum(food_num);
 		menu.setFoodName(food_name);

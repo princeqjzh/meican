@@ -6,7 +6,6 @@ import org.hibernate.cfg.Configuration;
 
 public class OrderReadDao {
 
-	//ȥ�Ҳ˵�
 	public void searchmenu(int ordernum) {
 		Configuration config = new Configuration().configure();
 

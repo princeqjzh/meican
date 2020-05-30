@@ -3,16 +3,14 @@
  */
 package com.struts2.list.dao;
 
-import java.util.List;
-
+import com.hibernate.restaurant.Restaurant;
+import com.hibernate.user.HibernateSessionFactory;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.hibernate.restaurant.Restaurant;
-import com.hibernate.user.HibernateSessionFactory;
-import com.hibernate.user.User;
+import java.util.List;
 
 public class ListSelectDao {
 

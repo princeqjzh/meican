@@ -1,13 +1,13 @@
 package com.struts2.manager;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.manager.dao.ManagerDao;
 import com.struts2.menu.dao.MenuDao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class DeleteMenuAction extends ActionSupport{
 	
@@ -24,7 +24,6 @@ public class DeleteMenuAction extends ActionSupport{
 	public String execute() {
 		String res = "SUCCESS";
 		ActionContext ctx = ActionContext.getContext();
-//		String res_num1 = (String) ctx.getSession().get("res_num");
 		
 		int res_num = (Integer) ctx.getSession().get("res_num");
 		
@@ -33,7 +32,7 @@ public class DeleteMenuAction extends ActionSupport{
 		
 		List<Map<String, Object>> rs = new ArrayList<Map<String, Object>>();
 		MenuDao menuDao = new MenuDao();
-		rs = menuDao.listMenu(res_num);//10001Ϊres_num
+		rs = menuDao.listMenu(res_num);
 		if(rs!=null){
 			ctx.getSession().put("list_menu", rs);
 			res = SUCCESS;

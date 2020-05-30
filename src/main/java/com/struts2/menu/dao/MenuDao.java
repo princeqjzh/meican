@@ -1,19 +1,17 @@
 package com.struts2.menu.dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
+import com.hibernate.menu.AbstractMenu;
+import com.hibernate.menu.Menu;
+import com.hibernate.user.HibernateSessionFactory;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.hibernate.menu.AbstractMenu;
-import com.hibernate.menu.Menu;
-import com.hibernate.user.HibernateSessionFactory;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MenuDao {
 	public static List listMenu(int res_num) {

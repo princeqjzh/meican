@@ -1,25 +1,23 @@
 package com.struts2.order.dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
-
 import com.hibernate.order.AbstractOrder;
 import com.hibernate.order.Order;
 import com.hibernate.user.HibernateSessionFactory;
 import com.struts2.list.dao.ListSelectDao;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReadDao {
 	public List listOrder(String username) {
 		List rs = new ArrayList();
 		List list;
 		List list_copy;
-//		Order order;
 		List<Map<String, Object>> list1 = new ArrayList<Map<String, Object>>();
 
 		Session session = HibernateSessionFactory.getSession();
@@ -40,7 +38,6 @@ public class ReadDao {
 			map.put("order_people", ((AbstractOrder) list.get(i)).getOrdNumber());
 			list1.add(map);
 		}
-//		System.out.println(list1.get(0));
 		session.close();
 		System.out.println(list1);
 		return list1;

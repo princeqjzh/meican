@@ -125,7 +125,7 @@ public class RestaurantDao {
 
 	public static void main(String[] args) throws HibernateException {
 		List<Map<String, Object>> rs = new ArrayList<Map<String, Object>>();
-		rs = SearchResraurant("����");
+		rs = SearchResraurant("姥姥家");
 		System.out.println(rs);
 	}
 

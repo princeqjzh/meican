@@ -1,11 +1,10 @@
 package com.struts2.login;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.struts2.login.dao.LoginDao;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class ForgotPasswordAction {
 	private String username;
