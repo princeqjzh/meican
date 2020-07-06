@@ -26,14 +26,17 @@ killJMeter()
 }
 echo "美餐网自动化压测全部开始"
 # 压测并发数列表
-thread_number_array=(10 20 30 40 50 100 200 300 400)
+thread_number_array=(50 100 200 300)
 for num in "${thread_number_array[@]}"
 do
     # 生成对应压测线程的jmx文件
     export jmx_filename="${jmx_template}_${num}${suffix}"
     export jtl_filename="test_${num}.jtl"
+    export web_report_path_name="web_${num}"
 
     rm -f ${jmx_filename} ${jtl_filename}
+    rm -rf ${web_report_path_name}
+
     cp ${jmx_template_filename} ${jmx_filename}
     echo "生成jmx压测脚本 ${jmx_filename}"
 
@@ -47,7 +50,9 @@ do
     nohup ${jmeter_path}/bin/jmeter -n -t ${jmx_filename} -l ${jtl_filename} &
     sleep 65
     killJMeter
-    rm -f ${jmx_filename}
+
+    # 生成Web压测报告
+    ${jmeter_path}/bin/jmeter -g ${jtl_filename} -o ${web_report_path_name}
 done
 echo "美餐网自动化压测全部结束"
 
