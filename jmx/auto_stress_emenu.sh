@@ -35,7 +35,7 @@ do
     ${jmeter_path}/bin/jmeter -n -t ${jmx_filename} -l ${jtl_filename}
 
     # 生成Web压测报告
-    ${jmeter_path}/bin/jmeter -g ${jtl_filename} -o ${web_report_path_name}
+    ${jmeter_path}/bin/jmeter -g ${jtl_filename} -e -o ${web_report_path_name}
 done
 echo "美餐网自动化压测全部结束"
 
